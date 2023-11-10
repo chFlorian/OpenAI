@@ -14,10 +14,13 @@ public struct ImagesQuery: Codable {
     public let n: Int?
     /// The size of the generated images. Must be one of 256x256, 512x512, or 1024x1024.
     public let size: String?
+  
+    public let model: String
 
-    public init(prompt: String, n: Int?, size: String?) {
+    public init(prompt: String, n: Int?, size: String?, model: String = "dall-e-3") {
         self.prompt = prompt
         self.n = n
         self.size = size
+        self.model = model
     }
 }
